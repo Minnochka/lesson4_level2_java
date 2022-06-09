@@ -5,8 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
+
+import java.awt.*;
 
 public class Controller {
     @FXML
@@ -19,7 +24,7 @@ public class Controller {
     private int step;
 
     public Controller(){
-        chat = new Chat();
+        chat = new Chat("Test");
     }
 
     public void clickSendButton() {
@@ -27,8 +32,7 @@ public class Controller {
         if (text.isBlank()){
             return;
         }
-
-
+        historyArea.appendText(chat.getName() + ": ");
         historyArea.appendText(text + "\n\n");
         userText.clear();
     }

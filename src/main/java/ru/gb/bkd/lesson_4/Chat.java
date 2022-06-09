@@ -6,7 +6,12 @@ import java.util.List;
 
 public class Chat {
 
-    public Chat(){
+    private final String name;
+    public Chat(String name){
+        this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
 }
